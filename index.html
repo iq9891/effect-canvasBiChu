@@ -27,14 +27,14 @@
 </head>
 
 <body>
-	
+
 	<canvas id="canvas" width="600" height="600" style="border:1px solid #f00;margin:10px auto;display:block;background:#fff"></canvas>
 
 	<a href="javascript:void(0)" id="clear">清空</a>
 
 	</div>
 
-	<script type="text/javascript" src="http://libs.useso.com/js/jquery/2.0.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://unpkg.com/jquery"></script>
 	<script type="text/javascript">
 	(function() {
 	    function h(a) {
@@ -104,7 +104,7 @@
 	            this.s = 0;
 	            this.d = [];
 	            this.lineWidth = this.c / 2 * (this.b / 320);
-	            this.g && (this.f(document, "mousemove", this.g), this.f(document, "touchmove", this.g), 
+	            this.g && (this.f(document, "mousemove", this.g), this.f(document, "touchmove", this.g),
 	            this.f(document, "mouseup", this.j), this.f(document, "touchend", this.j));
 	            this.g = function(a) {
 	                var b, c;
@@ -119,7 +119,7 @@
 	            this.j = function() {
 	                d.G();
 	            };
-	            "touchstart" == c ? (this.h(document, "touchmove", this.g), this.h(document, "touchend", this.j)) : (this.h(document, "mousemove", this.g), 
+	            "touchstart" == c ? (this.h(document, "touchmove", this.g), this.h(document, "touchend", this.j)) : (this.h(document, "mousemove", this.g),
 	            this.h(document, "mouseup", this.j));
 	            this.w();
 	            this.t(a, b);
@@ -129,7 +129,7 @@
 	            c = 0;
 	            a -= this.i.left;
 	            b -= this.i.top;
-	            if (this.d.length && (c = this.d[this.d.length - 1], c = Math.sqrt((c.x - a) * (c.x - a) + (c.y - b) * (c.y - b)), 
+	            if (this.d.length && (c = this.d[this.d.length - 1], c = Math.sqrt((c.x - a) * (c.x - a) + (c.y - b) * (c.y - b)),
 	            0 == c)) return;
 	            this.k++;
 	            this.d.push({
@@ -149,7 +149,7 @@
 	                    if (!this.s && (this.s = 1, g && e > g.r * f)) for (e /= 4, f = 1; 4 >= f; f++) this.u(c + f / 4 * (this.e.x - c), d + f / 4 * (this.e.y - d));
 	                    b || (b = e < .003125 * this.b ? this.b / 320 * this.c * 1.625 : e < .00625 * this.b ? this.b / 320 * this.c * 1.375 : e < .009375 * this.b ? this.b / 320 * this.c * 1.25 : e < .015625 * this.b ? this.b / 320 * this.c * 1.125 : e < .021875 * this.b ? this.b / 320 * this.c : e < .028125 * this.b ? this.b / 320 * this.c * .875 : e < .034375 * this.b ? this.b / 320 * this.c * .75 : e < .046875 * this.b ? this.b / 320 * this.c * .625 : e < .0625 * this.b ? this.b / 320 * this.c * .5 : this.b / 320 * this.c * .375);
 	                    this.n = b;
-	                    Math.abs(this.lineWidth - this.n) > this.b / 320 * this.c * .025 && (this.lineWidth -= (this.lineWidth - this.n) / 8, 
+	                    Math.abs(this.lineWidth - this.n) > this.b / 320 * this.c * .025 && (this.lineWidth -= (this.lineWidth - this.n) / 8,
 	                    this.a.lineWidth = this.lineWidth);
 	                }
 	                this.e = a;
@@ -183,20 +183,20 @@
 					c = this.l - a;
 					d = this.m - b;
 					e = Math.sqrt((this.l - a) * (this.l - a) + (this.m - b) * (this.m - b));
-					
+
 					if (Math.abs(e) > this.lineWidth / 3) {
 					//填补移动之间的点
 	                e = Math.floor(Math.abs(e) / (this.lineWidth / 3));
 					//console.log(e);
-		                for (var f = 1; f <= e; f++) Math.abs(this.lineWidth - this.n) > this.b / 320 * this.c * .025 && (this.lineWidth -= Math.round(this.lineWidth - this.n) / 8, 
-		                this.a.lineWidth = this.lineWidth), this.a.arc(this.l - f / e * c, this.m - f / e * d, this.lineWidth, 0, 2 * Math.PI), 
+		                for (var f = 1; f <= e; f++) Math.abs(this.lineWidth - this.n) > this.b / 320 * this.c * .025 && (this.lineWidth -= Math.round(this.lineWidth - this.n) / 8,
+		                this.a.lineWidth = this.lineWidth), this.a.arc(this.l - f / e * c, this.m - f / e * d, this.lineWidth, 0, 2 * Math.PI),
 		                this.a.fill(), this.a.stroke(), this.a.beginPath();
-						for (var f = 1; f <= e; f++){ 
+						for (var f = 1; f <= e; f++){
 							if(Math.abs(this.lineWidth - this.n) > this.b / 320 * this.c * .025){
-								this.lineWidth -= Math.round(this.lineWidth - this.n) / 8; 
+								this.lineWidth -= Math.round(this.lineWidth - this.n) / 8;
 								this.a.lineWidth = this.lineWidth;
 							}
-							this.a.arc(this.l - f / e * c, this.m - f / e * d,					this.lineWidth, 0, 2 * Math.PI); 
+							this.a.arc(this.l - f / e * c, this.m - f / e * d,					this.lineWidth, 0, 2 * Math.PI);
 							this.a.fill();
 							this.a.stroke();
 							this.a.beginPath();
